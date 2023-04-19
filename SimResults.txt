@@ -1,0 +1,11 @@
+Welcome to the WW2 Strategy Game!
+Please choose a country to play as (enter number): 
+1. USA
+2. Germany
+You chose: USA
+
+ Year: 1
+Please select an option (enter number): 
+1. Extract Resources
+2. Quit game
+Thanks for playing!
