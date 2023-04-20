@@ -55,7 +55,13 @@ public class Simulator implements SysOut {
             out("\nYear: " + (year+1));
             out("Please select an option (enter number): ");
             out("1. Extract Resources");
-            out("2. Quit game");
+            out("2. Sell resources");
+            out("3. Spy on another country");
+            out("4. Train troops, pilots & tankers");
+            out("5. Manufacture arms, aircraft & tanks.");
+            out("6. Attack a country");
+            out("7. Develop technology");
+            out("8. Quit game");
 
             int choice = scanner.nextInt();
             switch(choice) {
@@ -63,6 +69,24 @@ public class Simulator implements SysOut {
                     out("Extracting Resources...");
                     break;
                 case 2:
+                    out("Selling Resources...");
+                    break;
+                case 3:
+                    out("Spying...");
+                    break;
+                case 4:
+                    out("Training...");
+                    break;
+                case 5:
+                    out("Manufacturing...");
+                    break;
+                case 6:
+                    out("Attacking...");
+                    break;
+                case 7:
+                    out("Developing...");
+                    break;
+                case 8:
                     out("Thanks for playing!");
                     System.exit(0);
                 default:
