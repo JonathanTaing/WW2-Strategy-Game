@@ -4,8 +4,26 @@ Please choose a country to play as (enter number):
 2. Germany
 You chose: USA
 
- Year: 1
+Year: 1
 Please select an option (enter number): 
 1. Extract Resources
-2. Quit game
+2. Sell resources
+3. Spy on another country
+4. Train troops, pilots & tankers
+5. Manufacture arms, aircraft & tanks.
+6. Attack a country
+7. Develop technology
+8. Quit game
+Extracting Resources...
+
+Year: 2
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Spy on another country
+4. Train troops, pilots & tankers
+5. Manufacture arms, aircraft & tanks.
+6. Attack a country
+7. Develop technology
+8. Quit game
 Thanks for playing!
