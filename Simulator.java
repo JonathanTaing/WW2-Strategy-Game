@@ -51,7 +51,12 @@ public class Simulator implements SysOut {
         int year = 0;
         int totalYears = 30;
 
+        Publisher publisher = Publisher.getInstance();
+        Logger logger = Logger.getInstance();
+
         while (year < totalYears) {
+            logger.setLogger(year, publisher);
+
             out("\nYear: " + (year+1));
             out("Please select an option (enter number): ");
             out("1. Extract Resources");
@@ -93,6 +98,7 @@ public class Simulator implements SysOut {
                     out("Invalid selection. Try again.");
                     continue;
             }
+            logger.close();
             year++;
         }
     }
