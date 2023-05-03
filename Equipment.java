@@ -41,7 +41,7 @@ class Airplane extends Equipment {
     private static int id = 1;
     
     public Airplane() {
-        super("Car", id++, new Random().nextDouble(20000, 60000));
+        super("Airplane", id++, new Random().nextDouble(20000, 60000));
     }
 
 }
@@ -50,7 +50,7 @@ class Weapon extends Equipment {
     private static int id = 1;
     
     public Weapon() {
-        super("Pickup", id++, new Random().nextDouble(1000, 2000));
+        super("Weapon", id++, new Random().nextDouble(1000, 2000));
     }
 
 }
