@@ -23,7 +23,7 @@ public class Logger implements Observer {
     public void setLogger(int day, Publisher publisher) {
         this.publisher = publisher;
         try {
-            fileWriter = new FileWriter("Logger-" + day + ".txt");
+            fileWriter = new FileWriter("Year-" + day + ".txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
