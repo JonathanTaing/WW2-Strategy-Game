@@ -24,6 +24,8 @@ public class Hub implements SysOut {
     private ArrayList<Airplane> Airplane = new ArrayList<Airplane>();
     private ArrayList<Weapon> Weapon = new ArrayList<Weapon>();
 
+    private AttackMethod attackMethod;
+
     public Hub() {
         // Initialize Staff prior to Day 1
         // for (int i = 0; i < 2; i++) {
@@ -216,4 +218,15 @@ public class Hub implements SysOut {
         subtractBudget(manufacturingCost);
     }
 
+    public void setAttackMethod(AttackMethod attackMethod) {
+        this.attackMethod = attackMethod;
+    }
+
+    public void executeAttack() {
+        if (attackMethod != null) {
+            attackMethod.executeAttack();
+        } else {
+            System.out.println("No attack strategy set!");
+        }
+    }
 }
