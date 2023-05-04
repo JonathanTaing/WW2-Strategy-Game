@@ -12,7 +12,7 @@ public class Hub implements SysOut {
     private ArrayList<Soldiers> Soldiers = new ArrayList<Soldiers>();
     private ArrayList<TanksDriver> TanksDriver = new ArrayList<TanksDriver>();
     private ArrayList<Mechanics> mechanics = new ArrayList<Mechanics>();
-    private ArrayList<Medic> Medics = new ArrayList<Medic>();
+    private ArrayList<Medic> Medic = new ArrayList<Medic>();
 
     // This ArrayList will hold all the staffmembers in our WW2 simulation.
     // It exhibits polymorphism by acting as a container for all the children
@@ -50,44 +50,21 @@ public class Hub implements SysOut {
         this.CountryBudget += amt;
     }
 
-    public ArrayList<Pilots> getPilots() {
-        return Pilots;
-    }
-
-    public ArrayList<Soldiers> getSoldiers() {
-        return Soldiers;
-    }
-
-    public ArrayList<TanksDriver> getTanksDriver() {
-        return TanksDriver;
-    }
-
-    public ArrayList<Mechanics> getMechanics() {
-        return mechanics;
-    }
-
-    public ArrayList<Medic> getMedics() {
-        return Medics;
-    }
-
-    public ArrayList<Weapon> getWeapon() {
-        return Weapon;
-    }
-
-    public ArrayList<Tanks> getTanks() {
-        return Tanks;
-    }
-
-    public ArrayList<Airplane> getAirplane() {
-        return Airplane;
-    }
-
     public void subtractBudget(double expense) {
         this.CountryBudget -= expense;
     }
 
     public double getBudget() {
         return this.CountryBudget;
+    }
+
+    // adding staff
+    // smells like we need a factory or something...
+    void addStaff(Enums.StaffType t) {
+        Staff newStaff = null;
+        newStaff = StaffCreator.createStaff(t);
+        out("Assigned a new " + newStaff.type + " General named " + newStaff.name);
+        staff.add(newStaff);
     }
 
     public double getResourceQuantity(Enums.Resources resourceType) {
@@ -151,4 +128,45 @@ public class Hub implements SysOut {
         }
     }
 
+    void trainTroops(Enums.StaffType staffType, int quantity) {
+        // Check if there's enough budget to train the troops
+        double trainingCost = 0;
+        switch (staffType) {
+            case Pilots:
+                quantity /= 1000;
+                trainingCost = 100000 * quantity;
+                break;
+            case Soldiers:
+                quantity /= 10000;
+                trainingCost = 200000 * quantity;
+                break;
+            case TanksDriver:
+                quantity /= 1000;
+                trainingCost = 50000 * quantity;
+                break;
+            case Mechanics:
+                quantity /= 1000;
+                trainingCost = 30000 * quantity;
+                break;
+            case Medic:
+                quantity /= 1000;
+                trainingCost = 400000 * quantity;
+                break;
+            default:
+                break;
+        }
+
+        if (trainingCost > this.CountryBudget) {
+            System.out.println("Error: Not enough budget to train the troops");
+            return;
+        }
+
+        // Train the troops
+        for (int i = 0; i < quantity; i++) {
+            addStaff(staffType);
+        }
+
+        // Deduct the training cost from the budget
+        subtractBudget(trainingCost);
+    }
 }
