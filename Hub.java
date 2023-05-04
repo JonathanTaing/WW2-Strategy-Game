@@ -169,4 +169,51 @@ public class Hub implements SysOut {
         // Deduct the training cost from the budget
         subtractBudget(trainingCost);
     }
+
+    void manufactureEquipment(Enums.Equipment equipmentType, int quantity) {
+        // Check if there's enough budget to manufacture the equipment
+        double manufacturingCost = 0;
+        switch (equipmentType) {
+            case Weapon:
+                manufacturingCost = 100 * quantity;
+                break;
+            case Airplane:
+                manufacturingCost = 20000 * quantity;
+                break;
+            case Tanks:
+                manufacturingCost = 15000 * quantity;
+                break;
+            default:
+                break;
+        }
+
+        if (manufacturingCost > this.CountryBudget) {
+            System.out.println("Error: Not enough budget to manufacture the equipment");
+            return;
+        }
+
+        // Manufacture the equipment
+        for (int i = 0; i < quantity; i++) {
+            switch (equipmentType) {
+                case Weapon:
+                    Weapon weapon = new Weapon(1, 100);
+                    this.Weapon.add(weapon);
+                    break;
+                case Airplane:
+                    Airplane airplane = new Airplane(1, 20000);
+                    this.Airplane.add(airplane);
+                    break;
+                case Tanks:
+                    Tanks tank = new Tanks(1, 15000);
+                    this.Tanks.add(tank);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // Deduct the manufacturing cost from the budget
+        subtractBudget(manufacturingCost);
+    }
+
 }

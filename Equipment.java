@@ -1,56 +1,60 @@
-import java.util.Random;
-
 public abstract class Equipment {
-    private static Random rand = new Random();
-
-    private String name;
     private String type;
-    private double cost;
+    private int quantity;
 
-
-    public Equipment(String EquipmentType, int id, double initialCost) {
-        this.name = EquipmentType + "_" + id;
-        this.type = EquipmentType;
-        this.cost = initialCost;
-        
+    public Equipment(String equipmentType, int initialQuantity) {
+        this.type = equipmentType;
+        this.quantity = initialQuantity;
     }
-
 
     public String getType() {
         return this.type;
     }
-    public String getName() {
-        return this.name;
-    }
-    public double getCost() {
-        return this.cost;
+
+    public int getQuantity() {
+        return this.quantity;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
 
 class Tanks extends Equipment {
-    private static int id = 1;
-    
-    public Tanks() {
-        super("Tanks", id++, new Random().nextDouble(20000, 40000));
+    private double cost;
+
+    public Tanks(int initialQuantity, double cost) {
+        super("Tanks", initialQuantity);
+        this.cost = cost;
     }
 
+    public double getCost() {
+        return this.cost;
+    }
 }
 
 class Airplane extends Equipment {
-    private static int id = 1;
-    
-    public Airplane() {
-        super("Airplane", id++, new Random().nextDouble(20000, 60000));
+    private double cost;
+
+    public Airplane(int initialQuantity, double cost) {
+        super("Airplane", initialQuantity);
+        this.cost = cost;
     }
 
+    public double getCost() {
+        return this.cost;
+    }
 }
 
 class Weapon extends Equipment {
-    private static int id = 1;
-    
-    public Weapon() {
-        super("Weapon", id++, new Random().nextDouble(1000, 2000));
+    private double cost;
+
+    public Weapon(int initialQuantity, double cost) {
+        super("Weapon", initialQuantity);
+        this.cost = cost;
     }
 
+    public double getCost() {
+        return this.cost;
+    }
 }
