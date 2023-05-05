@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Hub implements SysOut {
     private double CountryBudget = 500000;
@@ -218,15 +219,48 @@ public class Hub implements SysOut {
         subtractBudget(manufacturingCost);
     }
 
-    public void setAttackMethod(AttackMethod attackMethod) {
-        this.attackMethod = attackMethod;
-    }
 
-    public void executeAttack() {
-        if (attackMethod != null) {
-            attackMethod.executeAttack();
+     boolean attack(String targetCountry) {
+        // Check if there are enough resources to perform the attack
+        if (CountryBudget < 100000 || Oil < 50000 || Food < 50000 || Ammo < 50000 || Medicine < 1000) {
+            System.out.println("Not enough resources to perform the attack");
+            return false;
+        }
+
+        // Deduct the resources used in the attack
+        subtractBudget(100000);
+        Oil -= 50000;
+        Food -= 50000;
+        Ammo -= 50000;
+        Medicine -= 1000;
+
+        // Calculate the success rate based on the available resources and staff
+        double successRate = 0.5 * (1 + (double) (Pilots.size() + Soldiers.size() + TanksDriver.size() + mechanics.size() + Medic.size()) / 1000)
+                             + 0.5 * (1 + (double) (Tanks.size() + Airplane.size() + Weapon.size()) / 100);
+
+        // Generate a random number between 0 and 1
+        Random rand = new Random();
+        double randomValue = rand.nextDouble();
+
+        // Determine if the attack was successful or not
+        if (randomValue <= successRate) {
+            out("Attack on " + targetCountry + " was successful!");
+            return true;
         } else {
-            System.out.println("No attack strategy set!");
+            out("Attack on " + targetCountry + " failed!");
+            return false;
         }
     }
+
+    // public void setAttackMethod(AttackMethod attackMethod) {
+    //     this.attackMethod = attackMethod;
+    // }
+
+    // public void executeAttack() {
+    //     if (attackMethod != null) {
+    //         attackMethod.executeAttack();
+    //     } else {
+    //         System.out.println("No attack strategy set!");
+    //     }
+    // }
 }

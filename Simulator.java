@@ -3,6 +3,11 @@ import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 
 // Simulator to cycle for select number of years
 public class Simulator implements SysOut {
@@ -11,6 +16,7 @@ public class Simulator implements SysOut {
 
     // This is the Country's Hub
     Hub hub;
+    private Set<String> defeatedCountries = new HashSet<>();
 
     void run() {
         File file = new File("SimResults.txt");
@@ -33,7 +39,11 @@ public class Simulator implements SysOut {
         out("Please choose a country to play as (enter number): ");
         out("1. USA");
         out("2. Germany");
-
+        out("3. UK");
+        out("4. Russia");
+        out("5. Japan");
+        out("6. France");
+    
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
@@ -44,6 +54,22 @@ public class Simulator implements SysOut {
                 playerCountry = new Country("Germany");
                 hub = new Hub();
                 break;
+            case 3:
+                playerCountry = new Country("UK");
+                hub = new Hub();
+                break;
+            case 4:
+                playerCountry = new Country("Russia");
+                hub = new Hub();
+                break;
+            case 5:
+                playerCountry = new Country("Japan");
+                hub = new Hub();
+                break;
+            case 6:
+                playerCountry = new Country("France");
+                hub = new Hub();
+                break;
             default:
                 out("Invalid selection. Try again.");
                 chooseCountry();
@@ -52,6 +78,31 @@ public class Simulator implements SysOut {
         out("You chose: " + playerCountry.name);
     }
 
+    private void displayAttackableCountries() {
+        String[] countries = {"USA", "Germany", "UK", "Russia", "Japan", "France"};
+        int index = 1;
+        for (String country : countries) {
+            if (!country.equals(playerCountry.name) && !defeatedCountries.contains(country)) {
+                out(index + ". " + country);
+                index++;
+            }
+        }
+    }
+    
+    private String getAttackableCountry(int choice) {
+        String[] countries = {"USA", "Germany", "UK", "Russia", "Japan", "France"};
+        List<String> attackableCountries = new ArrayList<>();
+        for (String country : countries) {
+            if (!country.equals(playerCountry.name) && !defeatedCountries.contains(country)) {
+                attackableCountries.add(country);
+            }
+        }
+        if (choice > 0 && choice <= attackableCountries.size()) {
+            return attackableCountries.get(choice - 1);
+        } else {
+            return null;
+        }
+    }
     private void mainMenu() {
         int year = 0;
         int totalYears = 30;
@@ -63,6 +114,7 @@ public class Simulator implements SysOut {
             logger.setLogger(year+1, publisher);
 
             out("\nYear: " + (year+1));
+            out("Gold:" + hub.getBudget());
             out("Please select an option (enter number): ");
             out("1. Extract Resources");
             out("2. Sell resources");
@@ -117,7 +169,7 @@ public class Simulator implements SysOut {
                     doubleQuantity = scanner.nextDouble();
 
                     // Call to sellResources raises an exception
-                    // hub.sellResources(resourceType, quantity);
+                     hub.sellResources(resourceType, doubleQuantity);
                     break;
                 case 3:
                     out("Spying...");
@@ -160,10 +212,28 @@ public class Simulator implements SysOut {
                     intQuantity = scanner.nextInt();
 
                     // Call to trainTroops raises an exception
-                    // hub.trainTroops(staffType, intQuantity) {
+                     hub.trainTroops(staffType, intQuantity);
                     break;
                 case 5:
-                    out("Attacking...");
+                out("Attacking...");
+
+            // Ask the user for the country they want to attack
+            out("Please choose a country to attack (enter number): ");
+            displayAttackableCountries();
+
+            int targetCountryChoice = scanner.nextInt();
+            String targetCountry = getAttackableCountry(targetCountryChoice);
+            if (targetCountry == null) {
+                out("Invalid selection. Try again.");
+                continue;
+            }
+
+            boolean isDefeated = hub.attack(targetCountry);
+            if (isDefeated) {
+                defeatedCountries.add(targetCountry);
+                out(targetCountry + " has been defeated!");
+            }
+
                     break;
                 case 6:
                     out("Thanks for playing!");
