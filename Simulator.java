@@ -16,12 +16,20 @@ public class Simulator implements SysOut {
 
     // This is the Country's Hub
     Hub hub;
-    private Set<String> defeatedCountries = new HashSet<>();
-
+    List<String> attackableCountries;
+    List<String> defeatedCountries;
     void run() {
         File file = new File("SimResults.txt");
         boolean fileExists = file.exists();
-
+    
+        attackableCountries = new ArrayList<>();
+        defeatedCountries = new ArrayList<>();
+    
+        out("Welcome to the WW2 Strategy Game!");
+        chooseCountry();
+        initializeAttackableCountries();
+        mainMenu();
+    
         // If file exists, overwrite it.
         try {
             FileWriter fileWriter = new FileWriter(file, !fileExists);
@@ -29,12 +37,21 @@ public class Simulator implements SysOut {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        out("Welcome to the WW2 Strategy Game!");
-        chooseCountry();
-        mainMenu();
     }
+    
 
+    private void initializeAttackableCountries() {
+        attackableCountries.add("USA");
+        attackableCountries.add("Germany");
+        attackableCountries.add("UK");
+        attackableCountries.add("France");
+        attackableCountries.add("Japan");
+        attackableCountries.add("Russia");
+
+        // Remove player's country from the list of attackable countries
+        attackableCountries.remove(playerCountry.name);
+    }
+    
     private void chooseCountry() {
         out("Please choose a country to play as (enter number): ");
         out("1. USA");
@@ -78,6 +95,13 @@ public class Simulator implements SysOut {
         out("You chose: " + playerCountry.name);
     }
 
+    private void checkWinCondition() {
+        if (attackableCountries.isEmpty()) {
+            out("Congratulations! You've defeated all the countries and won the game!");
+            System.exit(0);
+        }
+    }
+
     private void displayAttackableCountries() {
         String[] countries = {"USA", "Germany", "UK", "Russia", "Japan", "France"};
         int index = 1;
@@ -118,10 +142,9 @@ public class Simulator implements SysOut {
             out("Please select an option (enter number): ");
             out("1. Extract Resources");
             out("2. Sell resources");
-            out("3. Spy on another country");
-            out("4. Train troops, pilots & tankers");
-            out("5. Attack a country");
-            out("6. Quit game");
+            out("3. Train troops, pilots & tankers");
+            out("4. Attack a country");
+            out("5. Quit game");
 
             Enums.Resources resourceType;
             Enums.StaffType staffType;
@@ -171,10 +194,8 @@ public class Simulator implements SysOut {
                     // Call to sellResources raises an exception
                      hub.sellResources(resourceType, doubleQuantity);
                     break;
+
                 case 3:
-                    out("Spying...");
-                    break;
-                case 4:
                     out("Training...");
 
                     // Ask the user for the troops type they want to train
@@ -214,28 +235,23 @@ public class Simulator implements SysOut {
                     // Call to trainTroops raises an exception
                      hub.trainTroops(staffType, intQuantity);
                     break;
-                case 5:
+                case 4:
+                out("Please choose a country to attack (enter number): ");
+                displayAttackableCountries();
+                int targetChoice = scanner.nextInt();
+                String targetCountry = getAttackableCountry(targetChoice);
+                boolean attackSuccessful = hub.attack(targetCountry);
+
                 out("Attacking...");
 
-            // Ask the user for the country they want to attack
-            out("Please choose a country to attack (enter number): ");
-            displayAttackableCountries();
-
-            int targetCountryChoice = scanner.nextInt();
-            String targetCountry = getAttackableCountry(targetCountryChoice);
-            if (targetCountry == null) {
-                out("Invalid selection. Try again.");
-                continue;
-            }
-
-            boolean isDefeated = hub.attack(targetCountry);
-            if (isDefeated) {
-                defeatedCountries.add(targetCountry);
-                out(targetCountry + " has been defeated!");
-            }
+                if (attackSuccessful) {
+                    defeatedCountries.add(targetCountry);
+                    attackableCountries.remove(targetCountry);
+                    checkWinCondition();
+                }
 
                     break;
-                case 6:
+                case 5:
                     out("Thanks for playing!");
                     System.exit(0);
                 default:

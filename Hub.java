@@ -252,15 +252,15 @@ public class Hub implements SysOut {
         }
     }
 
-    // public void setAttackMethod(AttackMethod attackMethod) {
-    //     this.attackMethod = attackMethod;
-    // }
+    public void setAttackMethod(AttackMethod attackMethod) {
+        this.attackMethod = attackMethod;
+    }
 
-    // public void executeAttack() {
-    //     if (attackMethod != null) {
-    //         attackMethod.executeAttack();
-    //     } else {
-    //         System.out.println("No attack strategy set!");
-    //     }
-    // }
+    public void executeAttack() {
+        if (attackMethod != null) {
+            attackMethod.executeAttack();
+        } else {
+            System.out.println("No attack strategy set!");
+        }
+    }
 }
