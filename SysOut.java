@@ -16,5 +16,6 @@ public interface SysOut {
             e.printStackTrace();
         }
 
+        Publisher.getInstance().eventOccured(msg);
     }
 }

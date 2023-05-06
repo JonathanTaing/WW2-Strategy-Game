@@ -2,28 +2,19 @@ Welcome to the WW2 Strategy Game!
 Please choose a country to play as (enter number): 
 1. USA
 2. Germany
+3. UK
+4. Russia
+5. Japan
+6. France
 You chose: USA
 
 Year: 1
+Gold:500000.0
 Please select an option (enter number): 
 1. Extract Resources
 2. Sell resources
 3. Spy on another country
 4. Train troops, pilots & tankers
-5. Manufacture arms, aircraft & tanks.
-6. Attack a country
-7. Develop technology
-8. Quit game
-Invalid selection. Try again.
-
-Year: 1
-Please select an option (enter number): 
-1. Extract Resources
-2. Sell resources
-3. Spy on another country
-4. Train troops, pilots & tankers
-5. Manufacture arms, aircraft & tanks.
-6. Attack a country
-7. Develop technology
-8. Quit game
+5. Attack a country
+6. Quit game
 Thanks for playing!

@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.List;
 
+// This helper class was created by Bruce Montgomery from the previous projects
+// and has been used with his permission.
+
 // A silly little helper class for doing unique names
 // a Namer gets initialized with an ArrayList of Strings of any length
 // the Namer will provide getNext to return the next name in the list until it runs out

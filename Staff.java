@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Arrays;
 
+// Staff is an abstract class to be inherited by the following classes: Pilots, Soldiers, and TanksDriver, Mechanics, and Medics.
 public abstract class Staff implements SysOut {
     String name;
     int number;
