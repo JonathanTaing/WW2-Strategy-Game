@@ -235,7 +235,7 @@ public class Hub implements SysOut {
         Medicine -= 1000;
 
         // Calculate the success rate based on the available resources and staff
-        double successRate = 0.5 * (1 + (double) (Pilots.size() + Soldiers.size() + TanksDriver.size() + mechanics.size() + Medic.size()) / 1000)
+        double successRate = 0.3 * (1 + (double) (Pilots.size() + Soldiers.size() + TanksDriver.size() + mechanics.size() + Medic.size()) / 1000)
                              + 0.5 * (1 + (double) (Tanks.size() + Airplane.size() + Weapon.size()) / 100);
 
         // Generate a random number between 0 and 1

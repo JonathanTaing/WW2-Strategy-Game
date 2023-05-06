@@ -1,0 +1,17 @@
+
+Year: 10
+Gold:520000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. Germany
+2. UK
+3. Russia
+4. Japan
+5. France
+Attack on Germany was successful!
+Attacking...

@@ -1,0 +1,15 @@
+
+Year: 7
+Gold:370000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000

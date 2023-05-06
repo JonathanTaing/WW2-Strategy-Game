@@ -13,8 +13,274 @@ Gold:500000.0
 Please select an option (enter number): 
 1. Extract Resources
 2. Sell resources
-3. Spy on another country
-4. Train troops, pilots & tankers
-5. Attack a country
-6. Quit game
-Thanks for playing!
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 2
+Gold:550000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Selling Resources...
+Please choose the resource type to sell (enter number): 
+1. Oil
+2. Food
+3. Ammo
+4. Medicine
+Enter the quantity to sell: 
+
+Year: 3
+Gold:570000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Training...
+Please choose the staff type to train (enter number): 
+1. Pilots
+2. Soldiers
+3. TanksDriver
+4. Mechanics
+5. Medic
+Enter the amount to spend on training: 
+Assigned a new Pilots General named Fred
+
+Year: 4
+Gold:470000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Training...
+Please choose the staff type to train (enter number): 
+1. Pilots
+2. Soldiers
+3. TanksDriver
+4. Mechanics
+5. Medic
+Enter the amount to spend on training: 
+Assigned a new Soldiers General named James
+
+Year: 5
+Gold:270000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 6
+Gold:320000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 7
+Gold:370000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 8
+Gold:420000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 9
+Gold:470000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 10
+Gold:520000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. Germany
+2. UK
+3. Russia
+4. Japan
+5. France
+Attack on Germany was successful!
+Attacking...
+
+Year: 11
+Gold:420000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. UK
+2. Russia
+3. Japan
+4. France
+Attack on UK was successful!
+Attacking...
+
+Year: 12
+Gold:320000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. Russia
+2. Japan
+3. France
+Attack on Russia was successful!
+Attacking...
+
+Year: 13
+Gold:220000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. Japan
+2. France
+Attack on Japan failed!
+Attacking...
+
+Year: 14
+Gold:120000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 15
+Gold:170000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 16
+Gold:220000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Extracting Resources...
+You finished the year with the following impact 
+Country Budget increased by 50000
+Ammo increased by 100000
+Food increased by 100000
+Oil increased by 100000
+
+Year: 17
+Gold:270000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. Japan
+2. France
+Attack on Japan was successful!
+Attacking...
+
+Year: 18
+Gold:170000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Please choose a country to attack (enter number): 
+1. France
+Attack on France was successful!
+Attacking...
+Congratulations! You've defeated all the countries and won the game!

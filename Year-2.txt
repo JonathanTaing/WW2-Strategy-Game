@@ -1,0 +1,16 @@
+
+Year: 2
+Gold:550000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Selling Resources...
+Please choose the resource type to sell (enter number): 
+1. Oil
+2. Food
+3. Ammo
+4. Medicine
+Enter the quantity to sell: 

@@ -1,0 +1,18 @@
+
+Year: 3
+Gold:570000.0
+Please select an option (enter number): 
+1. Extract Resources
+2. Sell resources
+3. Train troops, pilots & tankers
+4. Attack a country
+5. Quit game
+Training...
+Please choose the staff type to train (enter number): 
+1. Pilots
+2. Soldiers
+3. TanksDriver
+4. Mechanics
+5. Medic
+Enter the amount to spend on training: 
+Assigned a new Pilots General named Fred
